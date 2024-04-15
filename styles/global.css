@@ -1,0 +1,86 @@
+
+/* light mode is default */
+:root {
+  --ws-base-font-size: 16px;
+  --ws-text-color: hsl(0, 0%, 20%);
+  --ws-text-color-dark: hsl(0, 0%, 0%);
+  --ws-text-color-light: hsl(0, 0%, 51%);
+  --ws-background-main: hsl(0, 0%, 98%);
+  --ws-background-elements: hsl(0, 0%, 100%);
+  --ws-border-radius: 4px;
+  --ws-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
+  --ws-fullscreen: calc(100vh - 4.5rem);
+  --ease-out: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+/* dark mode - see app/layout & theme-toggle to see how this is applied */
+:root[data-theme='dark'] {
+  --ws-text-color: hsl(0, 0%, 100%);
+  --ws-text-color-dark: hsl(0, 0%, 100%);
+  --ws-text-color-light: hsl(0, 0%, 75%);
+  --ws-background-main: hsl(207, 26%, 17%);
+  --ws-background-elements: hsl(209, 23%, 22%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
+  background-color: var(--ws-background-elements); /* match header bg */
+}
+
+body {
+  line-height: 1.5;
+  background-color: var(--ws-background-main);
+  font-size: var(--ws-base-font-size);
+  color: var(--ws-text-color);
+}
+
+main {
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+}
+
+/* consistent content max-widths (use like bootstrap .container class) */
+.ws-inner {
+  margin: 0 auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  width: 100%;
+  max-width: 80rem; /* 1280px w/ 32px gutters */
+}
+
+/* remove browser defaults */
+button {
+  background: none;
+  border: 0;
+  appearance: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--ws-text-color);
+}
+
+a, button {
+  outline-color: var(--ws-text-color);
+}
+
+/* screen reader text */
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}

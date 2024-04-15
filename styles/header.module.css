@@ -1,0 +1,32 @@
+
+.header {
+  height: 4.5rem;
+  background-color: var(--ws-background-elements);
+}
+
+.inner {
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1rem;
+}
+
+.title a {
+  text-decoration: none;
+  color: var(--ws-text-color);
+}
+
+.title a:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+@media (min-width: 767px) {
+  .title {
+    font-size: 1.25rem;
+  }
+}

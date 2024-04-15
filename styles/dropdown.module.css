@@ -1,0 +1,89 @@
+
+.dropdown {
+  position: relative;
+  z-index: 9;
+  width: 100%;
+  max-width: 16.375rem;
+}
+
+.dropdown button {
+  width: 100%;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.dropdownTrigger {
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.25rem;
+  padding: 0 1rem;
+  background-color: var(--ws-background-elements);
+  border-radius: var(--ws-border-radius);
+  box-shadow: var(--ws-box-shadow);
+}
+
+.dropdownTrigger:focus {
+  box-shadow: var(--ws-text-color) 0 0 0 2px, var(--ws-box-shadow);
+}
+
+.dropdownTrigger svg {
+  transition: transform 0.2s ease;
+}
+
+.dropdownList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 0;
+  width: 100%;
+  background-color: var(--ws-background-elements);
+  border-radius: var(--ws-border-radius);
+  box-shadow: var(--ws-box-shadow);
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: top right;
+  transform: scale(0.965) translateY(-8px);
+  transition: opacity 0.15s ease, transform 0.15s var(--ease-out), visibility 0.15s;
+}
+
+.dropdownList li:first-child button {
+  border-radius: var(--ws-border-radius) var(--ws-border-radius) 0 0;
+}
+
+.dropdownList li:last-child button {
+  border-radius: var(--ws-border-radius) var(--ws-border-radius) 0 0;
+}
+
+.openDropdown .dropdownTrigger svg {
+  transform: rotate(180deg);
+}
+
+.openDropdown .dropdownList {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity 0.2s ease, transform 0.33s var(--ease-out), visibility 0.33s;
+}
+
+.dropdownOption {
+  padding: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.dropdownOption span {
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.dropdownOption:hover span {
+  transform: translateX(0.125rem);
+}
+
+.dropdownOption:hover {
+  background-color: var(--ws-background-main);
+}

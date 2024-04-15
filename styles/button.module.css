@@ -1,0 +1,23 @@
+
+.button {
+  display: inline-block;
+  color: var(--ws-text-color);
+  text-decoration: none;
+  padding: 0.825rem 1.2rem;
+  background-color: var(--ws-background-elements);
+  border-radius: var(--ws-border-radius);
+  box-shadow: var(--ws-box-shadow);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button span {
+  padding-top: 2px; /* aligns better w/ svg icons */
+}
+
+.sm {
+  font-size: 0.75rem;
+  padding: 0.375rem 1rem;
+}

@@ -1,0 +1,17 @@
+
+.error {
+  text-align: center;
+  padding: 0 0 4rem;
+  height: var(--ws-fullscreen);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error h2 {
+  margin: 0 0 1rem;
+}
+
+.error a {
+  color: var(--ws-text-color);
+}

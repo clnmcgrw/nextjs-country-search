@@ -1,0 +1,116 @@
+
+.section {
+  min-height: calc(100vh - 11.75rem);
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0 4rem;
+}
+
+.item {
+  margin-bottom: 1.5rem;
+}
+
+.item a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: var(--ws-text-color);
+  border-radius: var(--ws-border-radius);
+  background-color: var(--ws-background-elements);
+  box-shadow: var(--ws-box-shadow);
+  transition: transform 0.15s ease;
+}
+
+.item a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0.125rem;
+  visibility: hidden;
+}
+
+.item a:hover {
+  transform: translateY(-0.125rem);
+}
+
+.item a:active {
+  transform: translateY(0);
+}
+
+.item a:hover:after {
+  visibility: visible;
+}
+
+.flag {
+  position: relative;
+  height: 0;
+  border-radius: var(--ws-border-radius) var(--ws-border-radius) 0 0;
+  overflow: hidden;
+  padding-bottom: 71%; /* 286X191 aspect ratio */
+}
+
+.flag img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* forces image to fill container, would want input from designer to choose contain vs cover */
+}
+
+.itemInfo {
+  padding: 2rem 1.5rem;
+}
+
+.itemInfo h4 {
+  font-size: 1.125rem;
+  margin: 0 0 1rem;
+}
+
+.itemInfo p {
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+}
+
+.itemInfo p:last-child {
+  margin: 0;
+}
+
+.noResults {
+  padding: 5rem 0 3rem;
+  text-align: center;
+}
+
+@media (min-width: 767px) {
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .item {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .item {
+    margin-bottom: 0;
+  }
+}
+
+/* I know this is outside style-guide spec, but felt like it looks/feels better w/ 4-up earlier than 1440px
+   would confirm w/ design/UX and take thier lead in real-world scenario */
+@media (min-width: 1199px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
